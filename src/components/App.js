@@ -1,11 +1,17 @@
 import React from "react";
+import { Provider } from "react-redux";
+import store from "../store/reduxStore";
+
+import HeroCardList from "./Cards/HeroCardList";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App(){
     return(
         <>
-            <div>App</div>
+            <Provider store={store}>
+                <HeroCardList />
+            </Provider>
         </>
     );
 }
