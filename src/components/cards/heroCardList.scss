@@ -1,0 +1,8 @@
+@import "../commmon/variable.scss";
+
+.card-list{
+    @include min-size(960px, auto);
+    padding: 20px 0px;
+    display: flex;
+    justify-content:space-between;
+}

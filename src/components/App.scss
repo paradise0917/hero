@@ -1,0 +1,12 @@
+@import "./commmon/variable.scss";
+
+body{
+    background-color: $gray-light;
+}
+.container{
+    padding: 30px;
+    .main{
+        overflow-x: auto;
+    }
+}
+
