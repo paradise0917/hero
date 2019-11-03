@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHeroes } from "../../reducers/heroReducer";
 
 import HeroCard from "./heroCard";
-import CardDeck  from "react-bootstrap/CardDeck";
+import Row from "react-bootstrap/Row";
 
 import "./heroCardList.scss";
 
@@ -30,7 +30,7 @@ export default function HeroCardList (){
     
     return(
         <>
-            <div className="card-list">
+            <Row className="justify-content-md-center">
                 {heroList.map(item => <HeroCard 
                     key={item.id}
                     id={item.id}
@@ -38,7 +38,7 @@ export default function HeroCardList (){
                     image={item.image} 
                     selected={selectedCardID === item.id ? true : false}
                     setSelectedCardID={setSelectedCardID}/>)}
-            </div>
+            </Row>
         </>
     );
 
