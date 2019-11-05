@@ -2,6 +2,9 @@
 
 Hahow 徵才專案作業 :relaxed::relaxed:
 
+## Live Demo
+[https://paradise0917.github.io/hero/public/#/](https://paradise0917.github.io/hero/public/#/)
+
 ## 安裝與執行
 
 Step1. Install Dependencies
