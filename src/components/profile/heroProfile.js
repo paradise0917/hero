@@ -88,7 +88,10 @@ export default function HeroProfile(){
                     </Col>
                     <Col xs={4} md={3} lg={2} className="algin-bottom">
                         <div>剩餘點數：{totalPoint} </div>
-                        <Button variant="primary" size="sm" block>儲存</Button>
+                        {
+                            totalPoint > 0 ? (<Button variant="primary" size="sm" block disabled>儲存</Button>) :
+                            (<Button variant="primary" size="sm" block>儲存</Button>)
+                        }
                     </Col>
                 </Row>
             </Card.Body>
