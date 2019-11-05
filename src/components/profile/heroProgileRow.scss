@@ -8,6 +8,7 @@
 }
 .col-value{
     display: flex;
+    justify-content: flex-start;
     button{
         @include size(30px, 30px);
         line-height: 20px;
@@ -15,6 +16,11 @@
         vertical-align: middle;
         font-size: $font-l;
 
+    }
+}
+@media (max-width: 576px){
+    .col-value{
+        justify-content: center;
     }
 }
 .profile-value{

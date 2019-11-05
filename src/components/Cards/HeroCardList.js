@@ -6,8 +6,6 @@ import HeroCard from "./heroCard";
 import Loader from "../commmon/loader";
 import Row from "react-bootstrap/Row";
 
-import "./heroCardList.scss";
-
 /*
  * CALL API TO GET LIST HEROES
  */
