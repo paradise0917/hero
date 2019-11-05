@@ -1,6 +1,9 @@
 import React from "react";
 import "./loader.scss";
 
+/*
+ * LOADING IMAGE COMPONENT
+ */
 export default function Loader(){
 
     return(<div className="loader">

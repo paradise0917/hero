@@ -1,7 +1,20 @@
 @import "./commmon/variable.scss";
 
 body{
-    background-color: $gray-light;
+    background: linear-gradient(-45deg, $light-blue, $light-green, $light-yellow, $light-pink);
+	background-size: 400% 400%;
+	animation: gradientBG 10s ease infinite;
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 .container{
     padding: 30px;

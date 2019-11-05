@@ -6,18 +6,23 @@ import Button from "react-bootstrap/Button";
 
 import "./heroProgileRow.scss";
 
+/*
+ * HERO PROFILE POINT ROW
+ */
 export default function HeroProfileRow (props) {
     function increasePoint (type) {
         if (props.totalPoint > 0) {
             props.profilePoint[type] = props.profilePoint[type] + 1;
-            props.increaseLocalPoint(props.profilePoint);
+            props.setTotalPoint(props.totalPoint - 1);
+            props.setProfilePoint(props.profilePoint);
         }
     }
 
     function decreasePoint (type) {
         if (props.profilePoint[type] > 0) {
             props.profilePoint[type] = props.profilePoint[type] - 1;
-            props.decreaseLocalPoint(props.profilePoint);
+            props.setTotalPoint(props.totalPoint + 1);
+            props.setProfilePoint(props.profilePoint);
         }
     }
 
@@ -38,7 +43,7 @@ export default function HeroProfileRow (props) {
 HeroProfileRow.propTypes = {
     totalPoint: PropTypes.number,
     profilePoint: PropTypes.object,
-    increaseLocalPoint: PropTypes.func,
-    decreaseLocalPoint: PropTypes.func,
+    setTotalPoint: PropTypes.func,
+    setProfilePoint: PropTypes.func,
     name: PropTypes.string
 };

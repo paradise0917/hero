@@ -7,6 +7,9 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "./heroCard.scss";
 
+/*
+ * EVERY SINGLE HERO CARD
+ */
 export default function HeroCard (props) {
     const selectedHero = useSelector(state => state.hero.selectedHero);
     const dispatch = useDispatch();
@@ -27,7 +30,7 @@ export default function HeroCard (props) {
 }
 
 HeroCard.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string
 };

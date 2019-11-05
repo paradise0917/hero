@@ -1,6 +1,9 @@
 
 import { RECEIVE_HEROES, SELECT_HERO, RECEIVE_PROFILE, SET_PROFILE } from "./heroAction";
 
+/* 
+ * SET HERO LIST TO REDUX
+ */
 function receiveHeroes (heroes) {
     return {
         type: RECEIVE_HEROES,
@@ -8,6 +11,9 @@ function receiveHeroes (heroes) {
     };
 }
 
+/* 
+ * GET HERO LIST FROM API
+ */
 export function fetchHeroes () {
     return dispatch => {
         return fetch("https://hahow-recruit.herokuapp.com/heroes")
@@ -16,6 +22,9 @@ export function fetchHeroes () {
     };
 }
 
+/* 
+ * SET USER SELECT HERO TO REDUX
+ */
 export function selectHero (id) {
     return {
         type: SELECT_HERO,
@@ -23,6 +32,9 @@ export function selectHero (id) {
     };
 }
 
+/* 
+ * SET HERO PROFILE TO REDUX
+ */
 function receiveProfile (profile) {
     return {
         type: RECEIVE_PROFILE,
@@ -30,6 +42,9 @@ function receiveProfile (profile) {
     };
 }
 
+/* 
+ * GET HERO PROFILE BY ID FROM API
+ */
 export function fetchProfile (id) {
     return dispatch => {
         return fetch(`http://hahow-recruit.herokuapp.com/heroes/${id}/profile`)
@@ -38,6 +53,9 @@ export function fetchProfile (id) {
 	  };
 }
 
+/* 
+ * PATCH HERO PROFILE 
+ */
 export function patchHeroProfile (heroId, profile) {
     return () => {
         return fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`, {

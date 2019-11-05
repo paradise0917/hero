@@ -11,15 +11,12 @@ import Modal from "react-bootstrap/Modal";
 
 import "./heroProfile.scss";
 
+/*
+ * CALL API TO GET HERO LIST
+ */
 function getHeroProfile (id) {
     const profile = useSelector(state => state.hero.profile);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (id !== -1 && id !== "undefined") {
-            dispatch(fetchProfile(id));
-        }
-    }, []);
 
     useEffect(() => {
         if (id !== -1 && id !== "undefined") {
@@ -30,10 +27,13 @@ function getHeroProfile (id) {
     return profile;
 }
 
+/*
+ * HERO PROFILE BLOCK
+ */
 export default function HeroProfile () {
     const selectedHero = useSelector(state => state.hero.selectedHero);
     const dispatch = useDispatch();
-    const heroData = getHeroProfile(selectedHero);
+    const heroProfilePoint = getHeroProfile(selectedHero);
     const heroProfileRow = [];
 
     const [totalPoint, setTotalPoint] = useState(0);
@@ -42,45 +42,42 @@ export default function HeroProfile () {
     const [smShow, setSmShow] = useState(false);
     const [alertMessage, setAlertMessage] = useState("false");
 
-    const handleClick = () => setLoading(true);
+    const handleSaveBtnClick = () => setLoading(true);
 
-    function increaseLocalPoint (newProfilePoint) {
-        if (totalPoint > 0) {
-            setTotalPoint(totalPoint - 1);
-            setProfilePoint(newProfilePoint);
-        }
+    for (const key in heroProfilePoint) {
+        heroProfileRow.push(<Row key={`row_${key}`} className="my-2">
+            <HeroProfileRow key={key}
+                name={key}
+                totalPoint={totalPoint}
+                setTotalPoint={setTotalPoint}
+                setProfilePoint={setProfilePoint}
+                profilePoint={profilePoint} /></Row>);
     }
 
-    function decreaseLocalPoint (newProfilePoint) {
-        setTotalPoint(totalPoint + 1);
-        setProfilePoint(newProfilePoint);
-    }
-
-    for (const key in heroData) {
-        heroProfileRow.push(<Row key={`row_${key}`} className="my-2"><HeroProfileRow key={key}
-            name={key}
-            totalPoint={totalPoint}
-            setTotalPoint={setTotalPoint}
-            profilePoint={profilePoint}
-            increaseLocalPoint={increaseLocalPoint}
-            decreaseLocalPoint={decreaseLocalPoint} /></Row>);
-    }
-
+    /*
+     * RESET TOTALPOINT WHNE CHANGING CARD
+     */
     useEffect(() => {
         setTotalPoint(0);
     }, [profilePoint]);
 
+    /*
+     * SET PROFILEPOINT WHNE CHANGING HEROPROFILEPOINT
+     */
     useEffect(() => {
-        if (Object.keys(heroData).length) {
+        if (Object.keys(heroProfilePoint).length) {
             setProfilePoint({
-                str: heroData.str,
-                int: heroData.int,
-                agi: heroData.agi,
-                luk: heroData.luk
+                str: heroProfilePoint.str,
+                int: heroProfilePoint.int,
+                agi: heroProfilePoint.agi,
+                luk: heroProfilePoint.luk
             });
         }
-    }, [heroData]);
+    }, [heroProfilePoint]);
 
+    /*
+     * SET PROFILEPOINT WHNE CHANGING HEROPROFILEPOINT
+     */
     useEffect(() => {
         if (isLoading) {
             dispatch(patchHeroProfile(selectedHero, profilePoint))
@@ -121,7 +118,7 @@ export default function HeroProfile () {
                                         : (<Button variant="info"
                                             size="sm"
                                             disabled={isLoading}
-                                            onClick={!isLoading ? handleClick : null}
+                                            onClick={!isLoading ? handleSaveBtnClick : null}
                                             block>
                                             {isLoading ? "Loading…" : "儲存"}
                                         </Button>)

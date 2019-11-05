@@ -9,7 +9,7 @@ import Row from "react-bootstrap/Row";
 import "./heroCardList.scss";
 
 /*
- * Call API to get heroList
+ * CALL API TO GET LIST HEROES
  */
 function getHeroList () {
     const heroList = useSelector(state => state.hero.heroList);
@@ -22,9 +22,12 @@ function getHeroList () {
     return heroList;
 }
 
+/*
+ * HERO LISTS COMPONENT
+ */
 export default function HeroCardList () {
-    const heroList = getHeroList();
 
+    const heroList = getHeroList();
     return (
         <>
             <Row className="justify-content-md-center">
