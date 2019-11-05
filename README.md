@@ -51,7 +51,9 @@ Dependencies
 * React-bootstrap  
   搭配 react 使用的 CSS Framework
 * Redux  
-  state 管理工具，從 Flux 的概念發展而來並且加以簡化，
+  state 管理工具，從 Flux 的概念發展而來並且加以簡化，不僅限於 React 使用，主要包含三大元件（action、reducer、store）
+* React-cookie  
+  搭配 react 使用，用來存取 Cookie 的套件
 
 DevDependencies
 * Babel  
