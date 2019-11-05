@@ -6,6 +6,9 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'public')
   },
+  devServer: {
+    contentBase: "./public",
+  },
   module: {
     rules: [
             {
@@ -19,10 +22,6 @@ module.exports = {
               }   
             },
             { test:/\.(scss|css)$/, use:["style-loader", "css-loader", "sass-loader"]},
-            // {
-            //   test: /\.css$/i,
-            //   use: ['style-loader', 'css-loader'],
-            // }
     ]
   }
 };
