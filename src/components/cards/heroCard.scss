@@ -6,7 +6,6 @@
     @include max-size(480px, auto);
     padding: 10px; 
     margin: 10px auto;
-    // box-shadow: 0 1px 3px rgba($blue-dark,.12), 0 1px 2px rgba($blue-dark,.24);
     opacity: .85;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -18,14 +17,13 @@
 }
 .card-hero:hover{
     transform: translate(-3px, -3px);
-    // box-shadow: 0 10px 23px rgba($blue-dark,.20), 0 7px 7px rgba($blue-dark,.18);
-    box-shadow: 0 1px 3px rgba($blue-dark,.12), 0 1px 2px rgba($blue-dark,.24);
+    box-shadow: 0 1px 3px rgba($gray,.12), 0 1px 2px rgba($gray,.24);
     opacity: 1;
 }
 .card-hero.selected{
-    border: solid 1px $gray;
+    border: solid 3px rgba($blue, .5);
     transform: translate(-3px, -3px);
-    box-shadow: 0 10px 23px rgba($blue,.20), 0 7px 7px rgba($blue,.18);
+    box-shadow: 0 10px 23px rgba($gray,.20), 0 7px 7px rgba($gray,.18);
     opacity: 1;
 }
 

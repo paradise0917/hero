@@ -114,14 +114,14 @@ export default function HeroProfile(){
             <Card className="card-profile">
                 <Card.Body>
                 <Row>
-                    <Col xs={8} md={9} lg={10} >
+                    <Col xs={12} md={9} lg={10} >
                         {heroProfileRow}
                     </Col>
-                    <Col xs={4} md={3} lg={2} className="algin-bottom">
-                        <div>剩餘點數：{totalPoint} </div>
+                    <Col xs={12} md={3} lg={2} className="right-block">
+                        <div className="my-3">剩餘點數：{totalPoint} </div>
                         {
-                            totalPoint > 0 ? (<Button variant="primary" size="sm" block disabled>儲存</Button>) :
-                            (<Button variant="primary" 
+                            totalPoint > 0 ? (<Button variant="info" size="sm" block disabled>儲存</Button>) :
+                            (<Button variant="info" 
                                 size="sm" 
                                 disabled={isLoading}
                                 onClick={!isLoading ? handleClick : null}

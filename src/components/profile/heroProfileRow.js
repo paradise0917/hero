@@ -26,9 +26,9 @@ export default function HeroProfileRow(props){
                 {props.name}
             </Col>
             <Col xs={8} md={7} className="col-value">
-                <Button variant="info" size="sm" onClick={() => {decreasePoint(props.name)}}  >-</Button>
+                <Button variant="light" size="sm" onClick={() => {decreasePoint(props.name)}}  >-</Button>
                 <div className="profile-value px-1">{props.profilePoint[props.name]}</div>
-                <Button variant="info" size="sm" onClick={() => {increasePoint(props.name)}} >+</Button>
+                <Button variant="light" size="sm" onClick={() => {increasePoint(props.name)}} >+</Button>
             </Col>
         </>
     );
