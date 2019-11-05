@@ -41,23 +41,23 @@ npm run deploy
 
 ## 使用的第三方 Library
 Dependencies
-* React
+* React  
   前端框架之一，相較於傳統的開發模式更方便多人協作，適合大型專案開發，強調單向資料流、Component 等概念
-* React Router DOM
+* React Router DOM  
   用來做 Router 的套件，可以讓 UI 與 URL 同步
-* React-bootstrap
+* React-bootstrap  
   搭配 react 使用的 CSS Framework
-* Redux
+* Redux  
   state 管理工具，從 Flux 的概念發展而來並且加以簡化，
 
 DevDependencies
-* Babel
+* Babel  
   JacaScript 的編譯器，可幫我們把較新版本的 JavaScript 轉換成瀏覽器可兼容的版本
-* Eslint
+* Eslint  
   一個 JavaScript Linter，可協助開發人員檢查並統一 coding style，確保程式碼品質與
-* Webpack
+* Webpack  
   模組打包工具，當我們使用很多較新的套件時，需要額外安裝轉換工具幫我們轉換成瀏覽器可閱讀的語言，Webpack 在安裝相關套件後可統一幫我們做轉換，另外也提供壓縮程式碼等很多方便的服務
-* css-loader, sass-loader, style-loader
+* css-loader, sass-loader, style-loader  
   讓開發人員在 js 中可以引入 css、sass 檔案（搭配 Webpack 使用）
 
 ## 寫註解的原則
