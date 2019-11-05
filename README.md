@@ -43,6 +43,7 @@ npm run deploy
 ## Web 架構
 
 ![](https://i.imgur.com/iSnvOyo.png)
+
 Web 架構主要依照 component 可分為三個部分 
 * homepage Animation  
   首頁載入動畫，依照 Cookie 判斷是否有載入過，如果有的話需等 Cookie 時效性(一日)過後才會再次顯示
