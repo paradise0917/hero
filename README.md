@@ -3,7 +3,7 @@
 Hahow 徵才專案作業 :relaxed::relaxed:
 
 ## Live Demo
-[https://paradise0917.github.io/hero/public/#/](https://paradise0917.github.io/hero/public/#/)
+[Demo WebSite](https://paradise0917.github.io/hero/public/#/)
 
 ## 安裝與執行
 
@@ -76,6 +76,7 @@ DevDependencies
 
 ## 執行畫面
 ![](https://i.imgur.com/eCPhlb6.jpg)
-![](https://i.imgur.com/ltrzOao.png)
+![](https://i.imgur.com/6xfHhjT.jpg)
+![](https://i.imgur.com/WtrBMRf.png)
 
 
