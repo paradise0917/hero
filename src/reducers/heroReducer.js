@@ -1,5 +1,5 @@
 
-import { RECEIVE_HEROES, SELECT_HERO, RECEIVE_PROFILE } from "./heroAction";
+import { RECEIVE_HEROES, SELECT_HERO, RECEIVE_PROFILE, SET_PROFILE } from "./heroAction";
 
 
 function receiveHeroes(heroes) {
@@ -39,6 +39,26 @@ export function fetchProfile(id){
 	  }
 }
 
+export function setProfile(heroId, profile) {
+	return {
+		type: SET_PROFILE,
+		payload: { heroId, profile }
+	}
+}
+
+export function patchHeroProfile(heroId, profile) {
+
+	return () => {
+		return fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`, {
+			method: "PATCH",
+			body: JSON.stringify(profile),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		}).then(response => response.status);
+	}
+}
+
 export default function heroReducer(state = { heroList:[], selectedHero: -1, profile:[] }, action) {
 	switch (action.type) {
 		case RECEIVE_HEROES:
@@ -55,6 +75,11 @@ export default function heroReducer(state = { heroList:[], selectedHero: -1, pro
 			return{
 				...state, 
 				profile: action.payload.profile
+			};
+		case SET_PROFILE:
+			return { ...state, 
+				profile: { ...state.profile, 
+				[action.payload.heroId]: action.payload.profile } 
 			};
 		default:
 			return state;
