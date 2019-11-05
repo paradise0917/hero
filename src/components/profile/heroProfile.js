@@ -61,7 +61,11 @@ export default function HeroProfile () {
      */
     useEffect(() => {
         setTotalPoint(0);
-        history.push(`/heroes/${selectedHero}`);
+        if(selectedHero !== -1){
+            history.push(`/heroes/${selectedHero}`);
+        }else{
+            history.push(`/heroes`);
+        }
     }, [profilePoint]);
 
     /*
