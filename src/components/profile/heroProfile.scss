@@ -1,0 +1,16 @@
+@import "../commmon/variable.scss";
+
+.card-profile{
+    margin: 20px auto;
+    .algin-bottom{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 576px){
+    .card-profile{
+        @include max-size(480px, auto);
+    }
+
+}

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHeroes } from "../../reducers/heroReducer";
 
 import HeroCard from "./heroCard";
+import Loader from "../commmon/loader";
 import Row from "react-bootstrap/Row";
 
 import "./heroCardList.scss";
@@ -26,18 +27,17 @@ function getHeroList(){
 export default function HeroCardList (){
 
     const heroList = getHeroList();
-    const [selectedCardID, setSelectedCardID] = useState(-1);
-    
+
     return(
         <>
             <Row className="justify-content-md-center">
-                {heroList.map(item => <HeroCard 
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    image={item.image} 
-                    selected={selectedCardID === item.id ? true : false}
-                    setSelectedCardID={setSelectedCardID}/>)}
+                {heroList.length > 0 ?
+                    heroList.map(item => <HeroCard 
+                        key={item.id}
+                        id={item.id}
+                        name={item.name}
+                        image={item.image} />):
+                    <Loader />}
             </Row>
         </>
     );

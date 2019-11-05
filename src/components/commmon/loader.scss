@@ -1,0 +1,8 @@
+@import "./variable.scss";
+
+.loader{
+    @include size(100%, 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

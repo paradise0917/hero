@@ -1,0 +1,23 @@
+@import "../commmon/variable.scss";
+
+.col-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.col-value{
+    display: flex;
+    button{
+        @include size(30px, 30px);
+        line-height: 20px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: $font-l;
+
+    }
+}
+.profile-value{
+    @include size(50px, auto);
+    text-align: center;
+}
