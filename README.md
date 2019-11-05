@@ -36,9 +36,9 @@ npm run deploy
     * profile
       放置與 heroProfile 相關的 component 
 * reucers
-  放置 app 所用到的 reducer
+  放置 redux 所用到的 action, action creators 和 reducer
 * store
-  放置 app 的 redux 的 store
+  放置 redux 的 store
 
 
 
@@ -64,7 +64,7 @@ DevDependencies
   讓開發人員在 js 中可以引入 css、sass 檔案（搭配 Webpack 使用）
 
 ## 寫註解的原則
-在每個 Component 與較為複雜的 function 開頭加入註解，因雖然有些在自己的角度上看起來很直覺，但怕是自我感覺良好 :joy: 所以都會盡可能的補上
+在每個 Component 與較為複雜的 function 開頭加入註解，因雖然有些在自己的角度上看起來很直覺，但怕是自我感覺良好 :joy: 所以都會斟酌補上
 
 ## 遇到的困難、問題、解決的方法
 * 第一次使用 Redux 較不熟悉

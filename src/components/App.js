@@ -18,8 +18,8 @@ function App () {
                     <HashRouter>
                         <Route path="/" exact component={HeroCardList} />
                         <Route path="/heroes" component={HeroCardList} />
+                        <HeroProfile />
                     </HashRouter>
-                    <HeroProfile />
                 </Container>
             </Provider>
         </>

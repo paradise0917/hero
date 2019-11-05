@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { fetchProfile, patchHeroProfile } from "../../reducers/heroReducer";
 
 import HeroProfileRow from "./heroProfileRow";
@@ -19,7 +20,7 @@ function getHeroProfile (id) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (id !== -1 && id !== "undefined") {
+        if (id !== -1) {
             dispatch(fetchProfile(id));
         }
     }, [dispatch, id]);
@@ -33,6 +34,7 @@ function getHeroProfile (id) {
 export default function HeroProfile () {
     const selectedHero = useSelector(state => state.hero.selectedHero);
     const dispatch = useDispatch();
+    const history = useHistory();
     const heroProfilePoint = getHeroProfile(selectedHero);
     const heroProfileRow = [];
 
@@ -59,6 +61,7 @@ export default function HeroProfile () {
      */
     useEffect(() => {
         setTotalPoint(0);
+        history.push(`/heroes/${selectedHero}`);
     }, [profilePoint]);
 
     /*
