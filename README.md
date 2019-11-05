@@ -75,3 +75,8 @@ DevDependencies
     * 困難與問題：因先前未曾在 React 專案中使用 CSS Framework，但想嘗試練習看看，但也因較不熟悉所以花了一些時間摸索
     * 解決方法：在使用前先閱讀官網的相關文件，查看可能可以用到的 Component，加快開發速度
 
+## 執行畫面
+![](https://i.imgur.com/eCPhlb6.jpg)
+![](https://i.imgur.com/ltrzOao.png)
+
+
