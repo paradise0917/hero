@@ -1,0 +1,70 @@
+@import "./variable.scss";
+
+.home-animation{
+
+    @include size(100vw, 100vh);
+    background: linear-gradient(-45deg, $light-blue, $light-green, $light-yellow, $light-pink);
+    background-size: 400% 400%;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+    animation: gradientHomeBG 5s ease infinite;
+
+    svg{
+
+        @include size(100vw, 100vh);
+        font-size: $font-xxl;
+        letter-spacing: 0.09em;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text {
+            fill: $black;
+            stroke: $black;
+            fill-opacity: 1;
+            stroke-width: 0;
+            stroke-dasharray: 100% 0;
+            animation: stroke-offset 3s ease-in-out;
+          }
+
+    }
+    
+    @keyframes stroke-offset {
+        0% {
+            fill-opacity: 0;
+            stroke-width: 0;
+            stroke-dasharray: 0% 100%;
+        }
+        25% {
+            stroke-width: 3px;
+        }
+        50% {
+            fill-opacity: 0;
+        }
+        75% {
+            stroke-width: 3px;
+        }
+        100% {
+            stroke-width: 0;
+        }
+    }
+
+}
+@keyframes gradientHomeBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+        background-position: 100% 50%;
+    }
+    70%{
+        opacity: 1;
+    }
+	95% {
+        background-position: 0% 50%;
+    }
+    100% {
+		opacity: 0;
+	}
+}

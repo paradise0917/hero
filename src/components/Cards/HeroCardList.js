@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHeroes } from "../../reducers/heroReducer";
 
 import HeroCard from "./heroCard";
-import Loader from "../commmon/loader";
+import Loader from "../common/loader";
 import Row from "react-bootstrap/Row";
 
 /*

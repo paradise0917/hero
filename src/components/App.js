@@ -3,6 +3,7 @@ import { HashRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store/reduxStore";
 
+import HomeAnimation from "./common/homeAnimation";
 import Container from "react-bootstrap/Container";
 import HeroCardList from "./cards/heroCardList";
 import HeroProfile from "./profile/heroProfile";
@@ -14,6 +15,7 @@ function App () {
     return (
         <>
             <Provider store={store}>
+                <HomeAnimation />
                 <Container className="container">
                     <HashRouter>
                         <Route path="/" exact component={HeroCardList} />
