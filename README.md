@@ -24,11 +24,11 @@ npm run deploy
 
 ## 專案架構
 
-![](https://i.imgur.com/f6CHvPL.png)
+![](https://i.imgur.com/IXWo7MM.png)
 
 資料夾架構分為三個部分 
 * components
-  主要依照 UI 切割分為共用、cards 和 profile 三個部分
+  主要依照 UI 切割分為 common、cards 和 profile 三個部分
     * common
       放置共用的 component 與 css 變數等檔案
     * cards
@@ -40,6 +40,16 @@ npm run deploy
 * store
   放置 redux 的 store
 
+## Web 架構
+
+![](https://i.imgur.com/iSnvOyo.png)
+Web 架構主要依照 component 可分為三個部分 
+* homepage Animation  
+  首頁載入動畫，依照 Cookie 判斷是否有載入過，如果有的話需等 Cookie 時效性(一日)過後才會再次顯示
+* heroCard List  
+  可再拆分成單張 heroCard component
+* hero Profile  
+  可再拆分成每個屬性設定的單行 component
 
 
 ## 使用的第三方 Library
