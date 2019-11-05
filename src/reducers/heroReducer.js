@@ -42,7 +42,7 @@ function receiveProfile (profile) {
 
 export function fetchProfile (id) {
     return dispatch => {
-        return fetch(`http://hahow-recruit.herokuapp.com/heroes/${id}/profile`)
+        return fetch(`https://hahow-recruit.herokuapp.com/heroes/${id}/profile`)
 		  .then(response => response.json())
 		  .then((profile) => dispatch(receiveProfile(profile)));
 	  };
