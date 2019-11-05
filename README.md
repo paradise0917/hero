@@ -26,6 +26,7 @@ npm run deploy
 ## 專案架構
 
 ![](https://i.imgur.com/f6CHvPL.png)
+
 資料夾架構分為三個部分 
 * components
   主要依照 UI 切割分為共用、cards 和 profile 三個部分
