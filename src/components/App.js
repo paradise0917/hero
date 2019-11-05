@@ -10,15 +10,14 @@ import HeroProfile from "./profile/heroProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
-function App(){
-
-    return(
+function App () {
+    return (
         <>
             <Provider store={store}>
                 <Container className="container">
                     <HashRouter>
-                        <Route path="/" exact component={HeroCardList} />  
-                        <Route path="/heroes" component={HeroCardList} />    
+                        <Route path="/" exact component={HeroCardList} />
+                        <Route path="/heroes" component={HeroCardList} />
                     </HashRouter>
                     <HeroProfile />
                 </Container>

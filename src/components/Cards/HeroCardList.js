@@ -8,38 +8,34 @@ import Row from "react-bootstrap/Row";
 
 import "./heroCardList.scss";
 
-
 /*
  * Call API to get heroList
  */
-function getHeroList(){
-
+function getHeroList () {
     const heroList = useSelector(state => state.hero.heroList);
-	const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(fetchHeroes())
+    useEffect(() => {
+        dispatch(fetchHeroes());
     }, [dispatch]);
 
     return heroList;
 }
 
-export default function HeroCardList (){
-
+export default function HeroCardList () {
     const heroList = getHeroList();
 
-    return(
+    return (
         <>
             <Row className="justify-content-md-center">
-                {heroList.length > 0 ?
-                    heroList.map(item => <HeroCard 
+                {heroList.length > 0
+                    ? heroList.map(item => <HeroCard
                         key={item.id}
                         id={item.id}
                         name={item.name}
-                        image={item.image} />):
-                    <Loader />}
+                        image={item.image} />)
+                    : <Loader />}
             </Row>
         </>
     );
-
 }
