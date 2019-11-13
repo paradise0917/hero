@@ -36,7 +36,7 @@ npm run deploy
     * profile
       放置與 heroProfile 相關的 component 
 * reucers
-  放置 redux 所用到的 action, action creators 和 reducer
+  放置 redux 所用到的 action, creators 和 reducer
 * store
   放置 redux 的 store
 
@@ -44,7 +44,7 @@ npm run deploy
 
 ![](https://i.imgur.com/iSnvOyo.png)
 
-Web 架構主要依照 component 可分為三個部分 
+ Web 架構主要依照 component 可分為三個部分 
 * homepage Animation  
   首頁載入動畫，依照 Cookie 判斷是否有載入過，如果有的話需等 Cookie 時效性(一日)過後才會再次顯示
 * heroCard List  
